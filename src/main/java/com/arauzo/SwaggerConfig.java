@@ -28,9 +28,9 @@ import java.util.ArrayList;
 @EnableSwagger2WebFlux
 public class SwaggerConfig {
 
-	public static final Contact DEFAULT_CONTACT = new Contact("MitoCode Network", "https://www.mitocode.com",
-			"cursos@mitocodenetwork.com");
-	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("MitoREST WebFlux Api Documentation", "MitoREST WebFlux Api Documentation", "1.0",
+	public static final Contact DEFAULT_CONTACT = new Contact("Pruebe", "https://www.prueba.com",
+			"prueba@prueba.com");
+	public static final ApiInfo DEFAULT_API_INFO = new ApiInfo("WebFlux Api Documentation", "WebFlux Api Documentation", "1.0",
 			"PREMIUM", DEFAULT_CONTACT, "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0",
 			new ArrayList<>());
 
