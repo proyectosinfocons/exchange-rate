@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "ac677878-5a7e-42b9-b7fe-9efdea7ebef3",
+		"name": "Reto Backend Exchange Rate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\":\"arauzo\",\r\n    \"clave\":\"123\",\r\n    \"estado\":true,\r\n\"roles\":[\r\n   {\r\n      \"id\":\"6577cf7c1233e776f685ca53\"\r\n   }\r\n]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/saveAccount",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"saveAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "username",
+						"value": "arauzo",
+						"type": "default"
+					},
+					{
+						"key": "clave",
+						"value": "123",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"arauzo\",\n    \"password\":\"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar tipo de cambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicHJvYmFuZG8uLi4uIiwicm9sZXMiOltdLCJzdWIiOiJhcmF1em8iLCJpYXQiOjE3MDI0ODI2NTYsImV4cCI6MTcwMjQ4NTQ1Nn0.bONKVulKbmROQDa26Yh0kPVEqtKzTKX6mURZmN-9GuP-IF4Ed822Hd4sTa0RHqmeAtjjzlBTrKIOXBdXxjzIOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sourceCurrency\":\"PEN\",\n    \"targetCurrency\":\"USD\",\n    \"rate\": 0.265\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exchange-rate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicHJvYmFuZG8uLi4uIiwicm9sZXMiOltdLCJzdWIiOiJhcmF1em8iLCJpYXQiOjE3MDI0ODI2NTYsImV4cCI6MTcwMjQ4NTQ1Nn0.bONKVulKbmROQDa26Yh0kPVEqtKzTKX6mURZmN-9GuP-IF4Ed822Hd4sTa0RHqmeAtjjzlBTrKIOXBdXxjzIOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exchange-rate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar tipo de cambio por Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicHJvYmFuZG8uLi4uIiwicm9sZXMiOltdLCJzdWIiOiJhcmF1em8iLCJpYXQiOjE3MDI0ODI2NTYsImV4cCI6MTcwMjQ4NTQ1Nn0.bONKVulKbmROQDa26Yh0kPVEqtKzTKX6mURZmN-9GuP-IF4Ed822Hd4sTa0RHqmeAtjjzlBTrKIOXBdXxjzIOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/exchange-rate/6579d2fbba8f0f29844ed5a7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"6579d2fbba8f0f29844ed5a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar tipo de cambio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicHJvYmFuZG8uLi4uIiwicm9sZXMiOltdLCJzdWIiOiJhcmF1em8iLCJpYXQiOjE3MDI0ODI2NTYsImV4cCI6MTcwMjQ4NTQ1Nn0.bONKVulKbmROQDa26Yh0kPVEqtKzTKX6mURZmN-9GuP-IF4Ed822Hd4sTa0RHqmeAtjjzlBTrKIOXBdXxjzIOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sourceCurrency\":\"PEN\",\n    \"targetCurrency\":\"USD\",\n    \"rate\": 0.2556\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exchange-rate/6579d2fbba8f0f29844ed5a7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"6579d2fbba8f0f29844ed5a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJ0ZXN0IjoicHJvYmFuZG8uLi4uIiwicm9sZXMiOltdLCJzdWIiOiJhcmF1em8iLCJpYXQiOjE3MDI0ODI2NTYsImV4cCI6MTcwMjQ4NTQ1Nn0.bONKVulKbmROQDa26Yh0kPVEqtKzTKX6mURZmN-9GuP-IF4Ed822Hd4sTa0RHqmeAtjjzlBTrKIOXBdXxjzIOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"monedadeOrigen\":\"PEN\",\n    \"monedadeDestino\":\"USD\",\n    \"monto\": 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/exchange-rate/change-currency",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"exchange-rate",
+						"change-currency"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
